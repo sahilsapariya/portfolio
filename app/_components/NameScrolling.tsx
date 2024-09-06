@@ -31,7 +31,7 @@ const NameScroller = () => {
 
   return (
     <div
-      className={`${rubik80sFade.className} w-full overflow-hidden whitespace-nowrap pointer-events-none`}
+      className={`${rubik80sFade.className} w-full overflow-hidden whitespace-nowrap pointer-events-none absolute z-0`}
     >
       <Marquee
         velocity={velocity}
