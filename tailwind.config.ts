@@ -12,6 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      dropShadow: {
+        'custom': '-100px 30px 100px rgba(0, 0, 0, 0.20)',
+      },
     },
   },
   plugins: [],
