@@ -9,50 +9,9 @@
   font-style: normal;
 } */
 
-
-/* ############# Infinte scrolling ################  */
-:root {
-  --scroll-distance: 100%; /* Default distance */
-  --scroll-duration: 10s;  /* Default duration */
+.gradient-text {
+  background: linear-gradient(to right, #EDA460 0%, #EDCE60 20%, #C0ED60 40%, #04A985 90% );
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
 }
-
-/* Scrolling keyframes */
-@keyframes scroll {
-  0% {
-    transform: translateX(var(--scroll-distance));
-  }
-  100% {
-    transform: translateX(-400%);
-  }
-}
-
-/* Apply the animation */
-.animate-scroll {
-  animation: scroll var(--scroll-duration) linear infinite;
-}
-
-/* Small screen (Mobile) */
-@media (max-width: 640px) {
-  :root {
-    --scroll-distance: 100%;
-    --scroll-duration: 10s; /* Adjusted duration for small screens */
-  }
-}
-
-/* Medium screens */
-@media (min-width: 640px) and (max-width: 1024px) {
-  :root {
-    --scroll-distance: 100%;
-    --scroll-duration: 15s; /* Adjusted duration for medium screens */
-  }
-}
-
-/* Large screens */
-@media (min-width: 1024px) {
-  :root {
-    --scroll-distance: 100%;
-    --scroll-duration: 25s; /* Adjusted duration for larger screens */
-  }
-}
-
-
