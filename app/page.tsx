@@ -7,7 +7,7 @@ import About from "./_components/About";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>Sahil&apos;s Portfolio</title>
         <meta
@@ -39,9 +39,12 @@ export default function Home() {
           </div>
         </div>
       </main>
+      {/* <SmoothScroll /> */}
 
       {/* ABOUT SECTION */}
-      <About />
-    </div>
+      <section>
+        <About />
+      </section>
+    </>
   );
 }

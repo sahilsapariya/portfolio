@@ -8,9 +8,24 @@
   font-weight: 400;
   font-style: normal;
 } */
+html {
+  scroll-behavior: smooth;
+  background-color: #ef9d51;
+}
+
+::selection {
+  background: #ccff00;
+  color: black;
+}
 
 .gradient-text {
-  background: linear-gradient(to right, #EDA460 0%, #EDCE60 20%, #C0ED60 40%, #04A985 90% );
+  background: linear-gradient(
+    to right,
+    #eda460 0%,
+    #edce60 20%,
+    #c0ed60 40%,
+    #04a985 90%
+  );
   -webkit-background-clip: text;
   color: transparent;
   background-clip: text;
