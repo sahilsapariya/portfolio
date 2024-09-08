@@ -14,7 +14,7 @@ const About = () => {
   return (
     <>
       <div
-        className="bg-black py-10 sm:p-10 lg:px-10 lg:py-32 relative top-[-10px] rounded-lg overflow-hidden z-40"
+        className="bg-black py-10 sm:p-10 lg:px-10 lg:py-32 relative top-[-10px] rounded-t-lg overflow-hidden z-40"
         ref={containerRef}
       >
         <div className="flex lg:items-center justify-start flex-col lg:flex-row">

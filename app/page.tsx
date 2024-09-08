@@ -1,8 +1,9 @@
 "use client";
 import Head from "next/head";
 import About from "./_components/About";
-import Projects from "./_components/Contact";
+import Contact from "./_components/Contact";
 import LandingPage from "./_components/LandingPage";
+import Projects from "./_components/Projects";
 
 export default function Home() {
   return (
@@ -22,11 +23,12 @@ export default function Home() {
       <div className="relative mt-[100vh] rounded-t-lg z-40">
         <div className="rounded-t-lg h-full">
           <About />
+          <Projects />
         </div>
       </div>
 
       <div className="h-screen sticky bottom-0 w-full bg-gray-900 z-30">
-        <Projects />
+        <Contact />
       </div>
     </>
   );
