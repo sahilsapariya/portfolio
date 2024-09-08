@@ -1,9 +1,8 @@
 "use client";
 import Head from "next/head";
-import NameScroller from "./_components/NameScrolling";
-import Hero from "./_components/Hero";
-import Image from "next/image";
 import About from "./_components/About";
+import Projects from "./_components/Contact";
+import LandingPage from "./_components/LandingPage";
 
 export default function Home() {
   return (
@@ -16,35 +15,19 @@ export default function Home() {
         />
       </Head>
 
-      {/* Landing page */}
-      <main className="bg-[#ef9d51] fixed top-0 right-0 left-0 bottom-0 z-0">
-        <div className="relative h-screen">
-          {/* Scrolling Name */}
-          <div className="h-[200px] lg:h-[250px] leading-[200px] lg:leading-[250px] w-full">
-            <NameScroller />
-          </div>
+      <div className="h-screen fixed top-0 w-full z-30">
+        <LandingPage />
+      </div>
 
-          {/* Hero Section */}
-          <Hero />
-
-          {/* Profile Image */}
-          <div className="absolute bottom-[-1px] right-0 w-[350px] md:w-[500px]">
-            <Image
-              src="/images/profile-picture.png"
-              alt="Sahil"
-              width={500}
-              height={700}
-              className="w-full h-full drop-shadow-custom pointer-events-none z-40"
-            />
-          </div>
+      <div className="relative mt-[100vh] rounded-t-lg z-40">
+        <div className="rounded-t-lg h-full">
+          <About />
         </div>
-      </main>
-      {/* <SmoothScroll /> */}
+      </div>
 
-      {/* ABOUT SECTION */}
-      <section>
-        <About />
-      </section>
+      <div className="h-screen sticky bottom-0 w-full bg-gray-900 z-30">
+        <Projects />
+      </div>
     </>
   );
 }

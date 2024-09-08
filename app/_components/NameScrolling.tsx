@@ -1,18 +1,19 @@
 "use client";
-import { Rubik_80s_Fade } from "@next/font/google";
+import { Rubik_80s_Fade, Rubik_Wet_Paint } from "@next/font/google";
 import { useEffect, useState } from "react";
 import Marquee from "react-marquee-slider";
 
 const rubik80sFade = Rubik_80s_Fade({ subsets: ["latin"], weight: "400" });
+const rubikWetPaint = Rubik_Wet_Paint({ subsets: ["latin"], weight: "400" });
 
 const calculateVelocity = (width: number) => {
   const baseVelocity = 30;
-  const scaleFactor = 1.5; 
+  const scaleFactor = 1.5;
   return baseVelocity * (width / 1000) * scaleFactor;
 };
 
 const NameScroller = () => {
-  const [velocity, setVelocity] = useState<number>(20); 
+  const [velocity, setVelocity] = useState<number>(20);
 
   useEffect(() => {
     const handleResize = () => {
@@ -21,7 +22,7 @@ const NameScroller = () => {
       }
     };
 
-    handleResize(); 
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
