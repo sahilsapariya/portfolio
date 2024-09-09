@@ -36,7 +36,7 @@ const Projects = () => {
 
       <div className="flex items-center flex-col my-20 lg:px-20 justify-center">
         {projects.map((project) => {
-          return <ProjectComponent project={project} />;
+          return <ProjectComponent project={project} key={project.id} />;
         })}
       </div>
     </section>
@@ -55,10 +55,7 @@ type ProjectProps = {
 
 const ProjectComponent = ({ project }: { project: ProjectProps }) => {
   return (
-    <div
-      className="flex flex-col gap-10 lg:gap-16 lg:flex-row items-center justify-center w-full my-12 lg:my-16"
-      key={project.id}
-    >
+    <div className="flex flex-col gap-10 lg:gap-16 lg:flex-row items-center justify-center w-full my-12 lg:my-16">
       <div className="w-full lg:w-[45%] flex items-center justify-center">
         <Image
           src={project.image}
@@ -114,7 +111,9 @@ const ProjectComponent = ({ project }: { project: ProjectProps }) => {
           </a>
         </div>
 
-        <p className="text-xl md:text-2xl font-normal mb-5">{project.description}</p>
+        <p className="text-xl md:text-2xl font-normal mb-5">
+          {project.description}
+        </p>
       </div>
     </div>
   );
