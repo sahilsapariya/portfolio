@@ -32,3 +32,17 @@ body::-webkit-scrollbar {
   color: transparent;
   background-clip: text;
 }
+
+.gradient-project-title {
+  background: linear-gradient(
+    to right,
+    #ffe8ac 0%,
+    #ffc786 10%,
+    #dfa752 30%,
+    #029676 90%
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+  font-size: 1.5rem;
+}
