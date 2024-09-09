@@ -5,6 +5,7 @@ import Contact from "./_components/Contact";
 import LandingPage from "./_components/LandingPage";
 import Projects from "./_components/Projects";
 import IndustryExperience from "./_components/IndustryExperience";
+import Testimonials from "./_components/Testimonials";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
           <About />
           <Projects />
           <IndustryExperience />
+          <Testimonials />
         </div>
       </div>
 
