@@ -4,6 +4,7 @@ import About from "./_components/About";
 import Contact from "./_components/Contact";
 import LandingPage from "./_components/LandingPage";
 import Projects from "./_components/Projects";
+import IndustryExperience from "./_components/IndustryExperience";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <div className="rounded-t-lg h-full">
           <About />
           <Projects />
+          <IndustryExperience />
         </div>
       </div>
 

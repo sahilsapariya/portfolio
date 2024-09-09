@@ -11,7 +11,7 @@ const LandingPage = () => {
 
       <Hero />
 
-      <div className="absolute bottom-[-1px] right-0 w-[350px] md:w-[500px] lg:w-[640px]">
+      <div className="absolute bottom-[-1px] right-0 w-[350px] md:w-[500px]">
         <Image
           src="/images/profile-picture.png"
           alt="Sahil"

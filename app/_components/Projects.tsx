@@ -95,6 +95,7 @@ const ProjectComponent = ({ project }: { project: ProjectProps }) => {
           <a
             href={project.demo}
             className="hover:text-blue-500 font-semibold text-[20px] flex gap-4 items-center"
+            target="_blank"
           >
             <span>🔗</span>
             <span>Check Now</span>
@@ -105,6 +106,7 @@ const ProjectComponent = ({ project }: { project: ProjectProps }) => {
           <a
             href={project.github}
             className="hover:text-blue-500 font-semibold text-[20px] flex gap-4 items-center"
+            target="_blank"
           >
             <Image src={"/github.svg"} width={24} height={24} alt="GitHub" />
             <span>GitHub</span>
@@ -152,7 +154,7 @@ const Skills = () => {
     "Numpy",
   ];
   return (
-    <section className="hidden lg:block">
+    <section className="hidden xl:block">
       <div className="grid grid-cols-6 gap-8 my-10 font-medium px-20">
         <div>
           <h2 className="mb-5 font-normal">TIMEFRAME</h2>
