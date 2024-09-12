@@ -5,6 +5,9 @@ const IndustryExperience = () => {
   return (
     <section className="bg-[#FAF3E0] px-5 md:px-10 py-10 top-[-10px] relative">
       <h1 className="px-0 pb-5 flex items-center text-[60px] lg:text-[72px] border-b border-black font-medium lg:font-semibold">
+        <span className="hidden md:block text-[96px] lg:text-[108px]">
+          ⤵︎&nbsp;
+        </span>
         <span className="leading-[70px]">Industrial Experience</span>
       </h1>
 
@@ -37,14 +40,17 @@ const DesktopExperience = () => {
           </div>
           <div>
             <p className="text-xl">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry&apos;s standard dummy
-              text ever since the 1500s, when an unknown printer took a galley
-              of type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum
+              During my time as a Frontend Developer Intern at Restrosoft
+              Solutions Pvt. Ltd., I was responsible for transforming{" "}
+              <strong> complex Figma designs</strong> into high-quality,
+              responsive web pages using{" "}
+              <strong>HTML, CSS, Bootstrap, and JavaScript</strong>. I focused
+              on developing <strong>interactive and reusable</strong> components
+              with ReactJS, ensuring efficient, well-organized code.
+              Additionally, I <strong>tested</strong> the website extensively,
+              identifying and resolving both frontend and backend issues to
+              improve the overall
+              <strong>performance and user experience</strong>.
             </p>
           </div>
         </div>
@@ -69,14 +75,17 @@ const DesktopExperience = () => {
           </div>
           <div>
             <p className="text-xl">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry&apos;s standard dummy
-              text ever since the 1500s, when an unknown printer took a galley
-              of type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum
+              As a Full Stack Developer Intern at Trakky Service Ltd., I{" "}
+              <strong>led a team</strong> in the development and successful
+              launch of four key features that <strong>increased</strong> user
+              engagement by <strong>40%</strong> in just three months. My
+              responsibilities also included{" "}
+              <strong>resolving compatibility issues</strong> and migrating the
+              backend database, resulting in a <strong>25% reduction</strong> in
+              system downtime. Moreover, I{" "}
+              <strong>mentored junior interns</strong> on best coding practices,
+              which led to a <strong>20% improvement</strong> in the overall
+              code quality and efficiency of the team.
             </p>
           </div>
         </div>
@@ -96,13 +105,16 @@ const MobileExperience = () => {
         </div>
         <div>
           <p className="text-xl">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry&apos;s standard dummy
-            text ever since the 1500s, when an unknown printer took a galley of
-            type and scrambled it to make a type specimen book. It has survived
-            not only five centuries, but also the leap into electronic
-            typesetting, remaining essentially unchanged. It was popularised in
-            the 1960s with the release of Letraset sheets containing Lorem Ipsum
+            During my time as a Frontend Developer Intern at Restrosoft
+            Solutions Pvt. Ltd., I was responsible for transforming{" "}
+            <strong> complex Figma designs</strong> into high-quality,
+            responsive web pages using{" "}
+            <strong>HTML, CSS, Bootstrap, and JavaScript</strong>. I focused on
+            developing <strong>interactive and reusable</strong> components with
+            ReactJS, ensuring efficient, well-organized code. Additionally, I{" "}
+            <strong>tested</strong> the website extensively, identifying and
+            resolving both frontend and backend issues to improve the overall{" "}
+            <strong>performance and user experience</strong>.
           </p>
         </div>
       </div>
@@ -114,13 +126,16 @@ const MobileExperience = () => {
         </div>
         <div>
           <p className="text-xl">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry&apos;s standard dummy
-            text ever since the 1500s, when an unknown printer took a galley of
-            type and scrambled it to make a type specimen book. It has survived
-            not only five centuries, but also the leap into electronic
-            typesetting, remaining essentially unchanged. It was popularised in
-            the 1960s with the release of Letraset sheets containing Lorem Ipsum
+            As a Full Stack Developer Intern at Trakky Service Ltd., I{" "}
+            <strong>led a team</strong> in the development and successful launch
+            of four key features that <strong>increased</strong> user engagement
+            by <strong>40%</strong> in just three months. My responsibilities
+            also included <strong>resolving compatibility issues</strong> and
+            migrating the backend database, resulting in a{" "}
+            <strong>25% reduction</strong> in system downtime. Moreover, I{" "}
+            <strong>mentored junior interns</strong> on best coding practices,
+            which led to a <strong>20% improvement</strong> in the overall code
+            quality and efficiency of the team.
           </p>
         </div>
       </div>

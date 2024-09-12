@@ -24,11 +24,13 @@ const MobileHero = () => {
           </span>
         </h1>
 
-        <button
+        <a
           className={`${roboto.className} font-bold mt-5 px-4 py-2 bg-[#029676]  text-white rounded w-fit z-40`}
+          href="https://drive.google.com/file/d/1819NG4-1vkpc_sH3KYaxZW6EEwOojy40/view?usp=share_link"
+          target="_blank"
         >
           Download Resume
-        </button>
+        </a>
       </div>
       <SocialIcons className="fixed bottom-36 left-[-1px]" />
     </>
@@ -57,11 +59,13 @@ const DesktopHero = () => {
             </span>
           </h1>
 
-          <button
+          <a
             className={`${roboto.className} font-bold mt-5 px-4 py-2 bg-[#029676]  text-white rounded w-fit lg:mt-0`}
+            href="https://drive.google.com/file/d/1819NG4-1vkpc_sH3KYaxZW6EEwOojy40/view?usp=share_link"
+            target="_blank"
           >
             Download Resume
-          </button>
+          </a>
         </div>
       </div>
     </div>

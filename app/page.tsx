@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import Head from "next/head";
 import About from "./_components/About";
 import Contact from "./_components/Contact";
@@ -8,6 +9,21 @@ import IndustryExperience from "./_components/IndustryExperience";
 import Testimonials from "./_components/Testimonials";
 
 export default function Home() {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      import("smooth-scroll").then((SmoothScroll) => {
+        new SmoothScroll.default('a[href*="#"]', {
+          speed: 1000,
+          offset: 0,
+          easing: "easeInOutCubic",
+          updateURL: false,
+          popstate: true,
+        });
+      });
+    }
+  }, []);
+
+
   return (
     <>
       <Head>

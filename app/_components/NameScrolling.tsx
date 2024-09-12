@@ -1,5 +1,6 @@
 "use client";
 import { Rubik_80s_Fade } from "@next/font/google";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import Marquee from "react-marquee-slider";
 
@@ -43,18 +44,23 @@ const NameScroller = () => {
         onFinish={() => console.log("Marquee finished")}
       >
         {[
-          <span
-            className="text-[200px] lg:text-[250px] font-bold animate-scroll mr-40"
+          <Image
+            src={"/name.png"}
+            width={1500}
+            height={200}
+            alt="sahil sapariya"
+            className="mr-32"
             key={1}
-          >
-            SAHIL SAPARIYA
-          </span>,
-          <span
-            className="text-[200px] lg:text-[250px] font-bold animate-scroll mr-40"
+          />,
+
+          <Image
+            src={"/name.png"}
+            width={1500}
+            height={200}
+            alt="sahil sapariya"
+            className="mr-32"
             key={2}
-          >
-            SAHIL SAPARIYA
-          </span>,
+          />,
         ]}
       </Marquee>
     </div>

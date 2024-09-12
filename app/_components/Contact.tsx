@@ -50,7 +50,7 @@ const Contact = () => {
       <div className="flex flex-col lg:flex-row  md:my-20 lg:justify-between lg:items-center">
         <div className="flex flex-col py-10">
           <p className="text-xl lg:text-2xl">
-            Made with love in Ahmedabad, India.
+            Made with ❤️ and Next.js in Ahmedabad, India.
           </p>
           <p className="flex gap-4">
             <span className="text-3xl lg:text-5xl text-gray-500 font-medium">
