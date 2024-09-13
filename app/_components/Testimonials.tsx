@@ -81,9 +81,13 @@ const Testimonials = () => {
             success. If you love what you are doing, you will be successful.
           </h1>
           <p className="flex items-center gap-3">
-            <span className="tracking-[-0.3rem] lg:tracking-[-0.4rem] lg:text-5xl text-3xl font-light">
+            {/* <span className="tracking-[-5px] lg:tracking-[-7px] lg:text-5xl text-3xl font-light">
               &nbsp;&nbsp;---&nbsp;&nbsp;
-            </span>
+            </span> */}
+
+            
+            <span className="custom-dashes text-3xl">&nbsp;&nbsp;----&nbsp;&nbsp;</span>
+
             <span className="text-3xl font-medium">Albert Schweitzer</span>
           </p>
         </div>

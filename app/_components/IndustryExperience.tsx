@@ -8,7 +8,7 @@ const IndustryExperience = () => {
         <span className="hidden md:block text-[96px] lg:text-[108px]">
           ⤵︎&nbsp;
         </span>
-        <span className="leading-[70px]">Industrial Experience</span>
+        <span className="font-bold md:font-medium leading-[70px]">Industrial Experience</span>
       </h1>
 
       <MobileExperience />
@@ -32,7 +32,7 @@ const DesktopExperience = () => {
         </div>
         <div className="w-4/5 flex flex-col gap-3">
           <div className="flex flex-col gap-1">
-            <h2 className="text-4xl font-semibold">eResto</h2>
+            <h2 className="text-4xl md:font-semibold font-bold ">eResto</h2>
             <div className="flex justify-between text-[#5A5A5A]">
               <p className="text-base">Frontend Developer Intern</p>
               <p className="italic text-sm">May&apos;24 - June&apos;24</p>
@@ -67,7 +67,7 @@ const DesktopExperience = () => {
         </div>
         <div className="w-4/5 flex flex-col gap-3">
           <div className="flex flex-col gap-1">
-            <h2 className="text-4xl font-semibold">Trakky Services Pvt Ltd</h2>
+            <h2 className="text-4xl md:font-semibold font-bold">Trakky Services Pvt Ltd</h2>
             <div className="flex justify-between text-[#5A5A5A]">
               <p className="text-base">Full Stack Developer Intern</p>
               <p className="italic text-sm">April&apos;23 - July&apos;23</p>

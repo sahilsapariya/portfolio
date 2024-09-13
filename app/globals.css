@@ -46,3 +46,13 @@ body::-webkit-scrollbar {
   background-clip: text;
   font-size: 1.5rem;
 }
+
+.custom-dashes {
+  letter-spacing: -5px; /* Default letter spacing */
+}
+
+@media (min-width: 1024px) {
+  .custom-dashes {
+    letter-spacing: -6px; /* Adjust for larger screens */
+  }
+}

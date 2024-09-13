@@ -7,9 +7,9 @@ const Contact = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentTime(new Date());
-    }, 1000); 
+    }, 1000);
 
-    return () => clearInterval(intervalId); 
+    return () => clearInterval(intervalId);
   }, []);
 
   const links = [
@@ -56,9 +56,16 @@ const Contact = () => {
             <span className="text-3xl lg:text-5xl text-gray-500 font-medium">
               Local time
             </span>
-            <span className="tracking-[-0.3rem] lg:tracking-[-0.4rem] text-gray-500 lg:text-5xl text-3xl font-light">
+            {/* <span className="tracking-[-0.3rem] lg:tracking-[-0.4rem] text-gray-500 lg:text-5xl text-3xl font-light">
+              &nbsp;&nbsp;----&nbsp;&nbsp;
+            </span> */}
+            {/* <span className="flex justify-center items-center text-gray-500 lg:text-5xl text-3xl font-light">
+              <span className="px-4">----</span>
+            </span> */}
+            <span className="custom-dashes text-3xl text-gray-500 flex items-center">
               &nbsp;&nbsp;----&nbsp;&nbsp;
             </span>
+
             <span className="text-3xl lg:text-5xl  font-semibold">
               {currentTime.toLocaleTimeString([], {
                 hour: "2-digit",

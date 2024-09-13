@@ -27,7 +27,6 @@ const MobileHero = () => {
         <a
           className={`${roboto.className} font-bold mt-5 px-4 py-2 bg-[#029676]  text-white rounded w-fit z-40`}
           href="https://drive.google.com/file/d/1819NG4-1vkpc_sH3KYaxZW6EEwOojy40/view?usp=share_link"
-          target="_blank"
         >
           Download Resume
         </a>

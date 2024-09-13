@@ -3,7 +3,6 @@ import SuperBadass from "./SuperBadass";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-
 const Projects = () => {
   const projects = [
     {
@@ -54,7 +53,7 @@ const Projects = () => {
 
       <Skills />
 
-      <div className="flex items-center flex-col my-20 lg:px-20 justify-center">
+      <div className="flex items-center flex-col md:my-20 lg:px-20 justify-center">
         {projects.map((project) => {
           return <ProjectComponent project={project} key={project.id} />;
         })}
@@ -116,7 +115,7 @@ const ProjectComponent = ({ project }: { project: ProjectProps }) => {
             return (
               <span
                 key={index}
-                className="border rounded-3xl text-md font-medium py-1 px-3"
+                className="border rounded-3xl text-sm font-medium py-1 px-3"
               >
                 {tech}
               </span>
