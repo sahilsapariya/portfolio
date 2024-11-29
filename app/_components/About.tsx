@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRef } from "react";
 
 const fadeInUpVariants = {
-  hidden: { opacity: 0, y: 100 },
+  hidden: { opacity: 0, y: 80 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 

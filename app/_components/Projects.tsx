@@ -43,6 +43,16 @@ const Projects = () => {
       demo: "https://elitemode.vercel.app/",
       image: "/images/elite-mode.png",
     },
+    {
+      id: 4,
+      title: "Design Alchemy",
+      description:
+        "A design project that showcasing my design skills and creativity. This project is designed using Figma.",
+      techStack: ["Figma", "UI/UX Design"],
+      figma:
+        "https://www.figma.com/design/jXF09vT9OMoT7hD3ZJL1L6/Design-Alchemy?node-id=0-1&t=nVxQq0hqHOujI03I-1",
+      image: "/images/design-alchemy.png",
+    },
   ];
 
   return (
