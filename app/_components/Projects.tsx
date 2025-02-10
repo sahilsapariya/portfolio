@@ -45,13 +45,13 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Design Alchemy",
+      title: "Sure Bank",
       description:
-        "A design project that showcasing my design skills and creativity. This project is designed using Figma.",
-      techStack: ["Figma", "UI/UX Design"],
-      figma:
-        "https://www.figma.com/design/jXF09vT9OMoT7hD3ZJL1L6/Design-Alchemy?node-id=0-1&t=nVxQq0hqHOujI03I-1",
-      image: "/images/design-alchemy.png",
+        "Sure Bank is a fictional banking website that offers a range of financial services, including savings accounts, loans, and credit cards.",
+      techStack: ["Next.js", "Tailwind CSS"],
+      github: "https://github.com/sahilsapariya/surebank",
+      demo: "https://surebank.vercel.app/",
+      image: "/images/surebank-3.png",
     },
   ];
 

@@ -20,15 +20,21 @@ const About = () => {
       >
         <div className="flex lg:items-center justify-start flex-col lg:flex-row">
           <motion.div
-            className="gradient-text lg:w-1/3 text-white text-[72px] leading-none font-bold justify-center py-10 lg:p-10 bg-black flex flex-col"
+            className="lg:w-1/3 text-white text-[72px] leading-none font-bold justify-center py-10 lg:p-10 bg-black flex flex-col"
             variants={fadeInUpVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            <span>About</span>
-            <span className="mt-[-15px] hidden lg:block">About</span>
-            <span className="mt-[-15px] hidden lg:block">About</span>
-            <span className="mt-[-15px] hidden lg:block">About</span>
+            <span className="text-opacity-100 gradient-text">About</span>
+            <span className="mt-[-15px] hidden lg:block opacity-50 gradient-text">
+              About
+            </span>
+            <span className="mt-[-15px] hidden lg:block opacity-25 gradient-text">
+              About
+            </span>
+            <span className="mt-[-15px] hidden lg:block opacity-10 gradient-text">
+              About
+            </span>
           </motion.div>
           <motion.div
             className="lg:w-2/3 py-10 lg:p-10"

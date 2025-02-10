@@ -74,7 +74,7 @@ const SuperBadass = () => {
             }}
             key={1}
           >
-            SUPER BADASS 🔥
+            SYNTAX BLAZER 🔥
           </h1>,
           <h1
             className="pointer-events-none select-none"
@@ -86,7 +86,7 @@ const SuperBadass = () => {
             }}
             key={2}
           >
-            SUPER BADASS 🔥
+            SYNTAX BLAZER 🔥
           </h1>,
           <h1
             className="pointer-events-none select-none"
@@ -98,7 +98,7 @@ const SuperBadass = () => {
             }}
             key={3}
           >
-            SUPER BADASS 🔥
+            SYNTAX BLAZER 🔥
           </h1>,
         ]}
       </Marquee>
