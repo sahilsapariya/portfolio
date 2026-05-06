@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Sapariya | Creative Developer</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        light: '#EAEAEA',
+                        accent: '#2846f3', // Electric Blue
+                        glass: 'rgba(255, 255, 255, 0.03)'
+                    },
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #050505;
+            color: #EAEAEA;
+            cursor: none; /* Hide default cursor */
+            overflow-x: hidden;
+        }
+
+        /* Interactive Background Canvas */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Custom Cursor */
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: white;
+        }
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+        
+        /* Hover State for Cursor */
+        body.hovering .cursor-outline {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(2px);
+            border-color: transparent;
+        }
+
+        /* Smooth Text Selection */
+        ::selection {
+            background-color: #2846f3;
+            color: white;
+        }
+
+        /* Magnetic Button Class */
+        .magnetic-wrap {
+            display: inline-block;
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div class="preloader">
+        <div class="overflow-hidden">
+            <span class="inline-block loader-text">SAHIL SAPARIYA</span>
+        </div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 px-6 py-6 mix-blend-difference text-white flex justify-between items-center bounce-load">
+        <div class="magnetic-wrap hover-trigger">
+            <a href="#" class="text-xl font-bold font-display tracking-tight magnetic-btn">SAHIL©</a>
+        </div>
+        
+        <div class="hidden md:flex gap-10 bg-white/5 backdrop-blur-md px-8 py-3 rounded-full border border-white/10 bounce-item">
+            <a href="#about" class="hover-trigger text-sm uppercase tracking-widest hover:text-accent transition-colors">About</a>
+            <a href="#work" class="hover-trigger text-sm uppercase tracking-widest hover:text-accent transition-colors">Work</a>
+            <a href="#contact" class="hover-trigger text-sm uppercase tracking-widest hover:text-accent transition-colors">Contact</a>
+        </div>
+
+        <div class="magnetic-wrap hover-trigger">
+            <a href="#" class="bg-white text-black px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider magnetic-btn group overflow-hidden relative inline-block">
+                <span class="relative z-10">Resume</span>
+                <div class="absolute inset-0 bg-accent transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
+                <span class="absolute inset-0 z-10 text-white flex items-center justify-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">Download</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="min-h-screen flex flex-col justify-center items-center relative pt-20 px-4">
+        
+        <div class="relative w-40 h-40 md:w-56 md:h-56 mb-8 rounded-full overflow-hidden border-2 border-white/10 hero-elem hover-trigger bounce-hover">
+            <img src="https://ui-avatars.com/api/?name=Sahil+Sapariya&background=050505&color=fff&size=256" 
+                 alt="Sahil" 
+                 class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110"
+                 data-speed="0.5">
+        </div>
+
+        <div class="text-center z-10 mix-blend-screen">
+            <h1 class="font-display text-[12vw] md:text-[9vw] font-bold leading-[0.8] tracking-tighter uppercase overflow-hidden">
+                <div class="hero-text translate-y-full">Full Stack</div>
+            </h1>
+            <h1 class="font-display text-[12vw] md:text-[9vw] font-bold leading-[0.8] tracking-tighter uppercase text-transparent stroke-white overflow-hidden" style="-webkit-text-stroke: 2px #fff; color: transparent;">
+                <div class="hero-text translate-y-full">Developer</div>
+            </h1>
+        </div>
+
+        <p class="mt-8 max-w-xl text-center text-white/60 text-lg md:text-xl font-light hero-elem opacity-0 bounce-load">
+            Based in India. Engineering digital experiences with <span class="text-accent font-bold">React</span>, <span class="text-accent font-bold">Next.js</span>, and <span class="text-accent font-bold">Python</span>.
+        </p>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50 bounce-load">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 13L12 18L17 13M7 6L12 11L17 6"/></svg>
+        </div>
+    </main>
+
+    <div class="py-16 bg-accent rotate-2 scale-110 border-y-4 border-black overflow-hidden relative z-20 bounce-scroll">
+        <div class="marquee-inner flex whitespace-nowrap">
+            <div class="flex gap-12 animate-none" id="marquee-text">
+                <span class="text-6xl font-display font-black italic uppercase text-black">Syntax Blazer 🔥</span>
+                <span class="text-6xl font-display font-black italic uppercase text-transparent" style="-webkit-text-stroke: 2px black">Syntax Blazer 🔥</span>
+                <span class="text-6xl font-display font-black italic uppercase text-black">Syntax Blazer 🔥</span>
+                <span class="text-6xl font-display font-black italic uppercase text-transparent" style="-webkit-text-stroke: 2px black">Syntax Blazer 🔥</span>
+                <span class="text-6xl font-display font-black italic uppercase text-black">Syntax Blazer 🔥</span>
+                <span class="text-6xl font-display font-black italic uppercase text-transparent" style="-webkit-text-stroke: 2px black">Syntax Blazer 🔥</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div class="reveal-text">
+                <h2 class="font-display text-5xl md:text-7xl font-bold mb-8 leading-tight">
+                    Code that <span class="text-accent">breathes.</span>
+                </h2>
+                <p class="text-xl md:text-2xl text-white/70 leading-relaxed font-light">
+                    I don't just write code; I craft interactive ecosystems. My work bridges the gap between <strong class="text-white">complex backend logic</strong> and <strong class="text-white">immersive frontend design</strong>.
+                </p>
+                
+                <div class="mt-12 flex gap-4 flex-wrap">
+                    <span class="px-4 py-2 rounded-full border border-white/20 hover:bg-white hover:text-black transition-colors cursor-none hover-trigger bounce-hover">React.js</span>
+                    <span class="px-4 py-2 rounded-full border border-white/20 hover:bg-white hover:text-black transition-colors cursor-none hover-trigger bounce-hover">Next.js 14</span>
+                    <span class="px-4 py-2 rounded-full border border-white/20 hover:bg-white hover:text-black transition-colors cursor-none hover-trigger bounce-hover">TypeScript</span>
+                    <span class="px-4 py-2 rounded-full border border-white/20 hover:bg-white hover:text-black transition-colors cursor-none hover-trigger bounce-hover">Django</span>
+                    <span class="px-4 py-2 rounded-full border border-white/20 hover:bg-white hover:text-black transition-colors cursor-none hover-trigger bounce-hover">GSAP</span>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 reveal-img">
+                <div class="bg-glass p-8 rounded-3xl border border-white/10 hover:border-accent/50 transition-colors hover-trigger bounce-hover">
+                    <h3 class="text-4xl font-display font-bold text-accent">04+</h3>
+                    <p class="text-sm text-white/50 uppercase tracking-widest mt-2">Years Coding</p>
+                </div>
+                <div class="bg-glass p-8 rounded-3xl border border-white/10 hover:border-accent/50 transition-colors hover-trigger bounce-hover">
+                    <h3 class="text-4xl font-display font-bold text-white">10+</h3>
+                    <p class="text-sm text-white/50 uppercase tracking-widest mt-2">Projects Shipped</p>
+                </div>
+                <div class="bg-glass p-8 rounded-3xl border border-white/10 col-span-2 hover:border-accent/50 transition-colors hover-trigger bounce-hover">
+                    <h3 class="text-4xl font-display font-bold text-white">100%</h3>
+                    <p class="text-sm text-white/50 uppercase tracking-widest mt-2">Job Success</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="py-20 px-4 md:px-10">
+        <h2 class="font-display text-[10vw] leading-none text-white/10 font-bold mb-10 select-none bounce-scroll">WORKS</h2>
+        
+        <div class="flex flex-col gap-20 max-w-7xl mx-auto">
+            
+            <div class="group relative project-card hover-trigger bounce-scroll">
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div class="order-2 md:order-1">
+                        <span class="text-accent font-mono text-sm mb-4 block">01 / CONSTRUCTION TECH</span>
+                        <h3 class="text-4xl md:text-5xl font-display font-bold mb-6 group-hover:text-accent transition-colors">Nirmaan Yaatraa</h3>
+                        <p class="text-white/60 mb-8 text-lg">Real-time monitoring system streamlining contractor-admin collaboration using Django & React.</p>
+                        <ul class="flex gap-4 text-sm font-mono text-white/40 mb-8">
+                            <li>Django</li>
+                            <li>PostgreSQL</li>
+                            <li>React</li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center gap-2 text-white font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform bounce-hover">
+                            View Case Study <span class="text-accent">→</span>
+                        </a>
+                    </div>
+                    <div class="order-1 md:order-2 h-[400px] overflow-hidden rounded-3xl border border-white/10 relative bounce-hover">
+                        <div class="absolute inset-0 bg-accent/10 z-10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1000&auto=format&fit=crop" alt="Project" class="project-img w-full h-full object-cover transition-transform duration-700 ease-out">
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative project-card hover-trigger bounce-scroll">
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div class="h-[400px] overflow-hidden rounded-3xl border border-white/10 relative bounce-hover">
+                        <div class="absolute inset-0 bg-yellow-500/10 z-10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1000&auto=format&fit=crop" alt="Project" class="project-img w-full h-full object-cover transition-transform duration-700 ease-out">
+                    </div>
+                    <div>
+                        <span class="text-yellow-500 font-mono text-sm mb-4 block">02 / 3D WEBGL EXPERIENCE</span>
+                        <h3 class="text-4xl md:text-5xl font-display font-bold mb-6 group-hover:text-yellow-500 transition-colors">College360</h3>
+                        <p class="text-white/60 mb-8 text-lg">An immersive 3D campus tour application allowing virtual exploration via Three.js.</p>
+                        <ul class="flex gap-4 text-sm font-mono text-white/40 mb-8">
+                            <li>Three.js</li>
+                            <li>WebGL</li>
+                            <li>Javascript</li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center gap-2 text-white font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform bounce-hover">
+                            View Live <span class="text-yellow-500">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative project-card hover-trigger bounce-scroll">
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div class="order-2 md:order-1">
+                        <span class="text-purple-500 font-mono text-sm mb-4 block">03 / E-COMMERCE</span>
+                        <h3 class="text-4xl md:text-5xl font-display font-bold mb-6 group-hover:text-purple-500 transition-colors">Elite Mode</h3>
+                        <p class="text-white/60 mb-8 text-lg">Modern fashion destination built with Next.js 14 and Server Actions for speed.</p>
+                        <ul class="flex gap-4 text-sm font-mono text-white/40 mb-8">
+                            <li>Next.js</li>
+                            <li>Prisma</li>
+                            <li>Tailwind</li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center gap-2 text-white font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform bounce-hover">
+                            Shop Now <span class="text-purple-500">→</span>
+                        </a>
+                    </div>
+                    <div class="order-1 md:order-2 h-[400px] overflow-hidden rounded-3xl border border-white/10 relative bounce-hover">
+                        <div class="absolute inset-0 bg-purple-500/10 z-10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1000&auto=format&fit=crop" alt="Project" class="project-img w-full h-full object-cover transition-transform duration-700 ease-out">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-20 px-6 max-w-4xl mx-auto border-t border-white/10 bounce-scroll">
+        <h2 class="font-display text-3xl font-bold mb-16">Experience Log</h2>
+        
+        <div class="relative space-y-12 pl-8 border-l border-white/10">
+            <div class="relative group hover-trigger bounce-hover">
+                <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-dark border border-white/30 group-hover:bg-accent group-hover:border-accent transition-colors"></div>
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                    <h3 class="text-2xl font-bold text-white group-hover:text-accent transition-colors">Frontend Intern</h3>
+                    <span class="font-mono text-sm text-white/40">May 2024 — June 2024</span>
+                </div>
+                <p class="text-white/80 mb-2">Restrosoft Solutions Pvt. Ltd.</p>
+                <p class="text-white/50 text-sm max-w-xl">Translated complex Figma prototypes into pixel-perfect React components. Optimized rendering performance by 20%.</p>
+            </div>
+
+            <div class="relative group hover-trigger bounce-hover">
+                <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-dark border border-white/30 group-hover:bg-accent group-hover:border-accent transition-colors"></div>
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                    <h3 class="text-2xl font-bold text-white group-hover:text-accent transition-colors">Full Stack Intern</h3>
+                    <span class="font-mono text-sm text-white/40">April 2023 — July 2023</span>
+                </div>
+                <p class="text-white/80 mb-2">Trakky Services Pvt. Ltd.</p>
+                <p class="text-white/50 text-sm max-w-xl">Spearheaded the backend migration to PostgreSQL. Mentored 2 juniors and reduced system downtime significantly.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-white text-black py-24 px-6 rounded-t-[3rem] mt-20 relative overflow-hidden bounce-scroll">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="font-display text-[15vw] leading-[0.8] font-bold tracking-tighter hover:text-accent transition-colors duration-500 cursor-pointer hover-trigger bounce-hover">
+                LET'S TALK
+            </h2>
+            
+            <div class="flex justify-center gap-8 mt-12 mb-20">
+                <div class="magnetic-wrap hover-trigger">
+                    <a href="#" class="magnetic-btn w-16 h-16 rounded-full border border-black/20 flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300">LI</a>
+                </div>
+                <div class="magnetic-wrap hover-trigger">
+                    <a href="#" class="magnetic-btn w-16 h-16 rounded-full border border-black/20 flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300">GH</a>
+                </div>
+                <div class="magnetic-wrap hover-trigger">
+                    <a href="#" class="magnetic-btn w-16 h-16 rounded-full border border-black/20 flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300">X</a>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm font-mono border-t border-black/10 pt-8">
+                <p>© 2025 Sahil Sapariya</p>
+                <p id="clock">00:00:00 IST</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Register GSAP Plugin
+        gsap.registerPlugin(ScrollTrigger);
+
+        // ---- Interactive Background (Canvas Particles) ----
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particlesArray;
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let mouse = {
+            x: null,
+            y: null,
+            radius: (canvas.height / 80) * (canvas.width / 80)
+        }
+
+        window.addEventListener('mousemove',
+            function(event) {
+                mouse.x = event.x;
+                mouse.y = event.y;
+            }
+        );
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = '#2846f3'; // Accent color
+                ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) {
+                    this.directionX = -this.directionX;
+                }
+                if (this.y > canvas.height || this.y < 0) {
+                    this.directionY = -this.directionY;
+                }
+
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < mouse.radius + this.size) {
+                    if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
+                        this.x += 10;
+                    }
+                    if (mouse.x > this.x && this.x > this.size * 10) {
+                        this.x -= 10;
+                    }
+                    if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
+                        this.y += 10;
+                    }
+                    if (mouse.y > this.y && this.y > this.size * 10) {
+                        this.y -= 10;
+                    }
+                }
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        function init() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 9000;
+            for (let i = 0; i < numberOfParticles * 2; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * 0.2) - 0.1;
+                let directionY = (Math.random() * 0.2) - 0.1;
+                let color = '#2846f3';
+
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+            connect();
+        }
+
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                    if (distance < (canvas.width/7) * (canvas.height/7)) {
+                        opacityValue = 1 - (distance / 20000);
+                        ctx.strokeStyle = 'rgba(40, 70, 243,' + opacityValue + ')';
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        window.addEventListener('resize',
+            function() {
+                canvas.width = innerWidth;
+                canvas.height = innerHeight;
+                mouse.radius = ((canvas.height / 80) * (canvas.height / 80));
+                init();
+            }
+        );
+
+        window.addEventListener('mouseout',
+            function() {
+                mouse.x = undefined;
+                mouse.y = undefined;
+            }
+        );
+
+        init();
+        animate();
+
+
+        // ---- Bouncy & Elastic Animations ----
+
+        // Preloader & Initial Load
+        const tl = gsap.timeline();
+        tl.to(".loader-text", {
+            y: 0,
+            duration: 1.5,
+            ease: "elastic.out(1, 0.3)"
+        })
+        .to(".preloader", {
+            y: "-100%",
+            duration: 1,
+            delay: 0.5,
+            ease: "power4.inOut"
+        })
+        .from(".hero-text", {
+            y: "100%",
+            stagger: 0.1,
+            duration: 1.5,
+            ease: "elastic.out(1, 0.3)"
+        }, "-=0.5")
+        .from(".bounce-load", {
+            y: 50,
+            opacity: 0,
+            duration: 1.5,
+            stagger: 0.1,
+            ease: "elastic.out(1, 0.5)"
+        }, "-=1");
+
+        // Custom Cursor Logic (Bouncier Follow)
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+        const hoverTriggers = document.querySelectorAll('.hover-trigger');
+
+        gsap.set(cursorDot, {xPercent: -50, yPercent: -50});
+        gsap.set(cursorOutline, {xPercent: -50, yPercent: -50});
+
+        let xTo = gsap.quickTo(cursorOutline, "x", {duration: 0.6, ease: "elastic.out(1, 0.3)"}),
+            yTo = gsap.quickTo(cursorOutline, "y", {duration: 0.6, ease: "elastic.out(1, 0.3)"});
+
+        window.addEventListener('mousemove', (e) => {
+            gsap.to(cursorDot, {duration: 0.1, x: e.clientX, y: e.clientY});
+            xTo(e.clientX);
+            yTo(e.clientY);
+        });
+
+        // Hover States
+        hoverTriggers.forEach(trigger => {
+            trigger.addEventListener('mouseenter', () => {
+                document.body.classList.add('hovering');
+                gsap.to(cursorOutline, {scale: 1.5, duration: 0.3, ease: "back.out(1.7)"});
+            });
+            trigger.addEventListener('mouseleave', () => {
+                document.body.classList.remove('hovering');
+                gsap.to(cursorOutline, {scale: 1, duration: 0.3, ease: "back.out(1.7)"});
+            });
+        });
+
+        // Bouncy Hover Effect on Elements
+        document.querySelectorAll('.bounce-hover').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                gsap.to(el, { scale: 1.05, duration: 0.4, ease: "elastic.out(1, 0.3)" });
+            });
+            el.addEventListener('mouseleave', () => {
+                gsap.to(el, { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.3)" });
+            });
+        });
+
+
+        // Magnetic Buttons (Elastic)
+        const magnets = document.querySelectorAll('.magnetic-wrap');
+        magnets.forEach((magnet) => {
+            magnet.addEventListener('mousemove', (e) => {
+                const position = magnet.getBoundingClientRect();
+                const x = e.clientX - position.left - position.width / 2;
+                const y = e.clientY - position.top - position.height / 2;
+                
+                const btn = magnet.querySelector('.magnetic-btn');
+                
+                gsap.to(btn, {
+                    x: x * 0.4,
+                    y: y * 0.4,
+                    duration: 0.2,
+                    ease: "power2.out"
+                });
+            });
+
+            magnet.addEventListener('mouseleave', () => {
+                const btn = magnet.querySelector('.magnetic-btn');
+                gsap.to(btn, {
+                    x: 0,
+                    y: 0,
+                    duration: 1,
+                    ease: "elastic.out(1, 0.3)"
+                });
+            });
+        });
+
+        // Marquee Animation
+        gsap.to("#marquee-text", {
+            xPercent: -50,
+            repeat: -1,
+            duration: 10,
+            ease: "linear"
+        });
+
+        // Scroll Reveals with Elastic Bounce
+        gsap.utils.toArray('.bounce-scroll').forEach(section => {
+            gsap.from(section, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 85%",
+                },
+                y: 100,
+                opacity: 0,
+                duration: 1.5,
+                ease: "elastic.out(1, 0.5)"
+            });
+        });
+        
+        gsap.utils.toArray('.reveal-text').forEach(section => {
+            gsap.from(section.children, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1.5,
+                stagger: 0.2,
+                ease: "elastic.out(1, 0.5)"
+            });
+        });
+        
+        gsap.utils.toArray('.reveal-img').forEach(section => {
+            gsap.from(section.children, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                },
+                scale: 0.8,
+                opacity: 0,
+                duration: 1.5,
+                stagger: 0.1,
+                ease: "elastic.out(1, 0.5)"
+            });
+        });
+
+        // Clock
+        setInterval(() => {
+            const now = new Date();
+            document.getElementById('clock').innerText = now.toLocaleTimeString('en-US', { hour12: false }) + ' IST';
+        }, 1000);
+
+    </script>
+</body>
+</html>

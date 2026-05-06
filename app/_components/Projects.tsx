@@ -2,6 +2,7 @@ import React from "react";
 import SuperBadass from "./SuperBadass";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { FaArrowTurnDown } from "react-icons/fa6";
 
 const Projects = () => {
   const projects = [
@@ -101,9 +102,9 @@ const ProjectComponent = ({ project }: { project: ProjectProps }) => {
       </div>
       <div className="w-full lg:w-[45%] max-w-[700px]">
         <div className="gradient-project-title">
-          <h2 className="text-5xl lg:text-6xl font-bold md:font-semibold my-5">
+          <h3 className="text-5xl lg:text-6xl font-bold md:font-semibold my-5">
             {project.title}
-          </h2>
+          </h3>
         </div>
         <div className="flex flex-col items-start">
           <p className="flex flex-col-reverse md:flex-row gap-4 md:items-center">
@@ -225,11 +226,13 @@ const ProjectsTitle = () => {
   }, []);
 
   return (
-    <h1
+    <h2
       ref={titleRef}
       className="px-0 py-0 flex items-center text-[60px] lg:text-[72px] border-b border-white font-medium lg:font-semibold text-white"
     >
-      <span className="text-[96px] lg:text-[108px]">⤵︎&nbsp;</span>
+      <span className="text-[96px] lg:text-[108px] flex items-center gap-2">
+        <FaArrowTurnDown size={96} /> &nbsp;
+      </span>
       <span className="flex overflow-hidden">
         {text.split("").map((letter, index) => (
           <span
@@ -245,42 +248,59 @@ const ProjectsTitle = () => {
           </span>
         ))}
       </span>
-    </h1>
+    </h2>
   );
 };
 
 const Skills = () => {
   const skills = [
-    "Python",
-    "JavaScript",
-    "React.js",
-    "Next.js",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "PostgreSQL",
-    "Docker",
-    "C",
-    "C++",
-    "Java",
-    "HTML",
-    "CSS",
-    "Sass",
-    "Tailwind CSS",
-    "Bootstrap",
-    "Django",
-    "Flask",
-    "Numpy",
+    "WebSockets",
+    "REST APIs",
+    "GraphQL",
+    "JWT Authentication",
+    "OAuth2",
+    "Redis",
+    "MySQL",
+    "SQLite",
+    "Git",
+    "GitHub Actions",
+    "NGINX",
+    "AWS EC2",
+    "AWS S3",
+    "AWS Lambda",
+    "CI/CD Pipelines",
+    "Pandas",
+    "Matplotlib",
+    "Scikit-Learn",
+    "OpenAI API",
+    "LangChain",
+    "Pinecone",
+    "Vector Databases",
+    "Prompt Engineering",
+    "Zustand",
+    "Framer Motion",
+    "Shadcn UI",
+    "Redux Toolkit",
+    "Vite",
+    "Three.js",
+    "Panolens.js",
+    "Data Structures & Algorithms",
+    "Operating Systems",
+    "Computer Networks",
+    "System Design",
+    "API Integrations",
+    "Web Scraping",
   ];
+
   return (
     <section className="hidden xl:block">
       <div className="grid grid-cols-6 gap-8 my-10 font-medium px-20">
         <div>
-          <h2 className="mb-5 font-normal">TIMEFRAME</h2>
-          <p>YEAR 2022-2024</p>
+          <h3 className="mb-5 font-normal">TIMEFRAME</h3>
+          <p>YEAR 2022-Present</p>
         </div>
         <div>
-          <h2 className="mb-5 font-normal">DISCIPLINE</h2>
+          <h3 className="mb-5 font-normal">DISCIPLINE</h3>
           <ul>
             <li>UI/UX Design</li>
             <li>Backend Development</li>
@@ -290,16 +310,15 @@ const Skills = () => {
           </ul>
         </div>
         <div>
-          <h2 className="mb-5 font-normal">TOOLS</h2>
+          <h3 className="mb-5 font-normal">TOOLS</h3>
           <ul>
             <li>Figma</li>
-            <li>VS Code</li>
             <li>Postman</li>
             <li>GitHub</li>
           </ul>
         </div>
         <div className="col-span-3">
-          <h2 className="mb-5 font-normal">TECHSTACK</h2>
+          <h3 className="mb-5 font-normal">TECHSTACK</h3>
           <ul className="flex flex-wrap gap-2">
             {skills.map((skill, index) => {
               return (

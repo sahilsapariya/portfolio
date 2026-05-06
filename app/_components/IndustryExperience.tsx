@@ -4,12 +4,12 @@ import React from "react";
 const IndustryExperience = () => {
   return (
     <section className="bg-[#FAF3E0] px-5 md:px-10 py-10 top-[-10px] relative">
-      <h1 className="px-0 pb-5 flex items-center text-[60px] lg:text-[72px] border-b border-black font-medium lg:font-semibold">
+      <h2 className="px-0 pb-5 flex items-center text-[60px] lg:text-[72px] border-b border-black font-medium lg:font-semibold">
         <span className="hidden md:block text-[96px] lg:text-[108px]">
           ⤵︎&nbsp;
         </span>
         <span className="font-bold md:font-medium leading-[70px]">Industrial Experience</span>
-      </h1>
+      </h2>
 
       <MobileExperience />
       <DesktopExperience />
@@ -32,7 +32,7 @@ const DesktopExperience = () => {
         </div>
         <div className="w-4/5 flex flex-col gap-3">
           <div className="flex flex-col gap-1">
-            <h2 className="text-4xl md:font-semibold font-bold ">Restrosoft Solutions</h2>
+            <h3 className="text-4xl md:font-semibold font-bold ">Restrosoft Solutions</h3>
             <div className="flex justify-between text-[#5A5A5A]">
               <p className="text-base">Frontend Developer Intern</p>
               <p className="italic text-sm">May&apos;24 - June&apos;24</p>
@@ -67,7 +67,7 @@ const DesktopExperience = () => {
         </div>
         <div className="w-4/5 flex flex-col gap-3">
           <div className="flex flex-col gap-1">
-            <h2 className="text-4xl md:font-semibold font-bold">Trakky Services Pvt Ltd</h2>
+            <h3 className="text-4xl md:font-semibold font-bold">Trakky Services Pvt Ltd</h3>
             <div className="flex justify-between text-[#5A5A5A]">
               <p className="text-base">Full Stack Developer Intern</p>
               <p className="italic text-sm">April&apos;23 - July&apos;23</p>
@@ -98,7 +98,7 @@ const MobileExperience = () => {
   return (
     <div className="lg:hidden my-10 flex flex-col gap-10">
       <div className="flex flex-col gap-3">
-        <h2 className="text-4xl font-semibold">eResto</h2>
+        <h3 className="text-4xl font-semibold">eResto</h3>
         <div className="flex flex-col text-[#5A5A5A]">
           <p className="text-base">Frontend Developer Intern</p>
           <p className="italic text-sm">May&apos;24 - June&apos;24</p>
@@ -119,7 +119,7 @@ const MobileExperience = () => {
         </div>
       </div>
       <div className="flex flex-col gap-3">
-        <h2 className="text-4xl font-semibold">Trakky Services Pvt. Ltd.</h2>
+        <h3 className="text-4xl font-semibold">Trakky Services Pvt. Ltd.</h3>
         <div className="flex flex-col text-[#5A5A5A]">
           <p className="text-base">Full Stack Developer Intern</p>
           <p className="italic text-sm">April&apos;23 - July&apos;23</p>

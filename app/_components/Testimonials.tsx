@@ -33,13 +33,21 @@ const Testimonials = () => {
     {
       id: 1,
       name: "Kevin Tamakuwala",
-      designation: "Upcoming SDE @Outamation",
+      designation: "SDE @Pirimid Fintech",
       message:
         "Sahil is an exceptional frontend developer with a strong ability to solve complex bugs efficiently. His eagerness to learn new technologies, combined with a continuous learning mindset, sets him apart as a valuable team member and a great peer to collaborate with.",
       img: "/images/kevin.jpeg",
     },
     {
-      id: 1,
+      id: 2,
+      name: "Nisarg Pipaliya",
+      designation: "SE @IGNOSIS",
+      message:
+        "For any web development queries, Sahil has always been my first point of contact. His expertise and clarity make him my dependable go-to.",
+      img: "/images/nisarg.jpeg",
+    },
+    {
+      id: 3,
       name: "Kevin Tamakuwala",
       designation: "Upcoming SDE @Outamation",
       message:
@@ -47,7 +55,7 @@ const Testimonials = () => {
       img: "/images/kevin.jpeg",
     },
     {
-      id: 1,
+      id: 4,
       name: "Kevin Tamakuwala",
       designation: "Upcoming SDE @Outamation",
       message:
@@ -55,15 +63,7 @@ const Testimonials = () => {
       img: "/images/kevin.jpeg",
     },
     {
-      id: 1,
-      name: "Kevin Tamakuwala",
-      designation: "Upcoming SDE @Outamation",
-      message:
-        "Sahil is an exceptional frontend developer with a strong ability to solve complex bugs efficiently. His eagerness to learn new technologies, combined with a continuous learning mindset, sets him apart as a valuable team member and a great peer to collaborate with.",
-      img: "/images/kevin.jpeg",
-    },
-    {
-      id: 1,
+      id: 5,
       name: "Kevin Tamakuwala",
       designation: "Upcoming SDE @Outamation",
       message:
@@ -76,10 +76,10 @@ const Testimonials = () => {
     <section className="bg-black text-white md:py-20 px-5 py-10 xl:p-10 top-[-10px] relative flex flex-col xl:flex-row rounded-b-lg">
       <div className="xl:w-1/2 flex flex-col justify-between gap-10 xl:pr-20">
         <div className="flex flex-col gap-10">
-          <h1 className="text-5xl font-medium">
+          <h2 className="text-5xl font-medium">
             Success is not the key to happiness. Happiness is the key to
             success. If you love what you are doing, you will be successful.
-          </h1>
+          </h2>
           <p className="flex items-center gap-3">
             {/* <span className="tracking-[-5px] lg:tracking-[-7px] lg:text-5xl text-3xl font-light">
               &nbsp;&nbsp;---&nbsp;&nbsp;
@@ -129,7 +129,7 @@ const Testimonials = () => {
               <p className="text-sm">{testimonial.message}</p>
               <div className="flex justify-between items-end">
                 <div className="flex flex-col">
-                  <h3 className="text-base font-bold">{testimonial.name}</h3>
+                  <h4 className="text-base font-bold">{testimonial.name}</h4>
                   <p className="text-sm text-[#808080]">
                     {testimonial.designation}
                   </p>

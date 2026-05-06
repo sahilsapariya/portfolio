@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
 
 const Contact = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -37,6 +38,7 @@ const Contact = () => {
 
   return (
     <div className="flex flex-col justify-center bg-white px-5 sm:p-10 lg:px-20 sticky bottom-0 h-screen lg:py-32 z-30">
+      <h2 className="sr-only">Contact Sahil Sapariya</h2>
       <div className="border border-black rounded w-full">
         <Image
           src={"/name_rubik_wet_paint.png"}
@@ -87,8 +89,8 @@ const Contact = () => {
             >
               <p className="flex items-center justify-between w-full">
                 <span className="relative z-10">{link.name}</span>
-                <span className="relative z-10 text-sm justify-end flex">
-                  ↗
+                <span className="relative z-10 text-sm justify-end flex rotate-[-45deg]">
+                  <FaArrowRight size={12} />
                 </span>
               </p>
 

@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Head from "next/head";
 import About from "./_components/About";
 import Contact from "./_components/Contact";
 import LandingPage from "./_components/LandingPage";
@@ -31,34 +30,26 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Sahil&apos;s Portfolio</title>
-        <meta
-          name="description"
-          content="Sahil's Full Stack Developer Portfolio"
-        />
-      </Head>
-
       {isLoading ? (
         <SplashScreen finishLoading={() => setIsLoading(false)} />
       ) : (
         <>
-          <div className="h-screen fixed top-0 w-full z-30">
+          <header className="h-screen fixed top-0 w-full z-30">
             <LandingPage />
-          </div>
+          </header>
 
-          <div className="relative mt-[100vh] rounded-t-lg z-40">
+          <main className="relative mt-[100vh] rounded-t-lg z-40">
             <div className="rounded-t-lg h-full">
               <About />
               <Projects />
               <IndustryExperience />
               <Testimonials />
             </div>
-          </div>
+          </main>
 
-          <div className="h-screen sticky bottom-0 w-full bg-gray-900 z-30">
+          <footer className="h-screen sticky bottom-0 w-full bg-gray-900 z-30">
             <Contact />
-          </div>
+          </footer>
         </>
       )}
     </>

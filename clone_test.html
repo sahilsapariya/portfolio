@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Sapariya | Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#0e0e0e',
+                        surface: '#161616',
+                        border: '#262626',
+                        accent: '#3b82f6', // Blue accent
+                        textMain: '#ededed',
+                        textMuted: '#a1a1aa',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'], // For the tall, condensed look
+                    },
+                    animation: {
+                        'marquee': 'marquee 15s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            background-color: #0e0e0e; 
+            color: #ededed;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0e0e0e; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #444; }
+
+        /* Marquee Strip */
+        .marquee-strip {
+            transform: rotate(-2deg) scale(1.05);
+            width: 110vw;
+            margin-left: -5vw;
+        }
+        
+        .hover-card:hover {
+            transform: translateY(-5px);
+            border-color: #404040;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-white selection:text-black">
+
+    <nav class="fixed top-0 w-full z-50 bg-[#0e0e0e]/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight hover:text-white/80 transition">
+                Sahil Sapariya
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="text-sm text-textMuted hover:text-white transition">About</a>
+                <a href="#projects" class="text-sm text-textMuted hover:text-white transition">Projects</a>
+                <a href="#experience" class="text-sm text-textMuted hover:text-white transition">Experience</a>
+            </div>
+
+            <a href="#" class="group relative inline-flex items-center gap-2 px-5 py-2.5 bg-white text-black text-xs font-bold uppercase tracking-wide rounded-full hover:bg-gray-200 transition-all">
+                <span>Download Resume</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-y-0.5 transition-transform"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+            
+            <div class="mb-10 relative group">
+                <div class="absolute inset-0 bg-blue-500 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition duration-500"></div>
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-white/10 relative z-10">
+                    <img src="https://ui-avatars.com/api/?name=Sahil+Sapariya&background=0e0e0e&color=fff&size=200" alt="Sahil" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                </div>
+            </div>
+
+            <h1 class="font-display text-[13vw] leading-[0.8] font-bold uppercase tracking-tighter text-white mix-blend-difference mb-6 select-none">
+                Full Stack <br/>
+                <span class="text-transparent stroke-text" style="-webkit-text-stroke: 1px #444;">Developer</span>
+            </h1>
+
+            <p class="max-w-xl text-textMuted text-lg md:text-xl leading-relaxed mt-4">
+                I build pixel-perfect, engaging, and accessible digital experiences.
+            </p>
+        </div>
+    </main>
+
+    <div class="py-12 overflow-hidden bg-[#E11D48] text-white marquee-strip border-y-4 border-black">
+        <div class="flex whitespace-nowrap overflow-hidden">
+            <div class="animate-marquee flex gap-8 items-center">
+                <span class="text-4xl font-black italic tracking-widest uppercase">Syntax Blazer 🔥</span>
+                <span class="text-4xl font-black italic tracking-widest uppercase">Syntax Blazer 🔥</span>
+                <span class="text-4xl font-black italic tracking-widest uppercase">Syntax Blazer 🔥</span>
+                <span class="text-4xl font-black italic tracking-widest uppercase">Syntax Blazer 🔥</span>
+                <span class="text-4xl font-black italic tracking-widest uppercase">Syntax Blazer 🔥</span>
+                <span class="text-4xl font-black italic tracking-widest uppercase">Syntax Blazer 🔥</span>
+                <span class="text-4xl font-black italic tracking-widest uppercase">Syntax Blazer 🔥</span>
+                <span class="text-4xl font-black italic tracking-widest uppercase">Syntax Blazer 🔥</span>
+            </div>
+            <div class="animate-marquee flex gap-8 items-center" aria-hidden="true">
+                <span class="text-4xl font-black italic tracking-widest uppercase">Syntax Blazer 🔥</span>
+                <span class="text-4xl font-black italic tracking-widest uppercase">Syntax Blazer 🔥</span>
+                <span class="text-4xl font-black italic tracking-widest uppercase">Syntax Blazer 🔥</span>
+                <span class="text-4xl font-black italic tracking-widest uppercase">Syntax Blazer 🔥</span>
+                <span class="text-4xl font-black italic tracking-widest uppercase">Syntax Blazer 🔥</span>
+                <span class="text-4xl font-black italic tracking-widest uppercase">Syntax Blazer 🔥</span>
+                <span class="text-4xl font-black italic tracking-widest uppercase">Syntax Blazer 🔥</span>
+                <span class="text-4xl font-black italic tracking-widest uppercase">Syntax Blazer 🔥</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-[1fr_2fr] gap-12">
+            <div>
+                <span class="inline-block py-1 px-3 border border-white/20 rounded-full text-xs font-mono text-textMuted uppercase tracking-wider mb-2">About Me</span>
+                <h2 class="text-3xl font-bold mt-2">I create digital<br>solutions.</h2>
+            </div>
+            <div class="space-y-6">
+                <p class="text-xl text-textMuted leading-relaxed">
+                    <strong class="text-white">Sahil (he/him)</strong> is a skilled Full-Stack Developer passionate about creating cutting-edge web applications. Proficient in React.js, Next.js, TypeScript, Python, and Django, he excels in building intuitive interfaces and scalable backend systems.
+                </p>
+                <div class="pt-6 border-t border-white/10 grid grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="text-sm font-bold text-white mb-1">Education</h4>
+                        <p class="text-textMuted text-sm">B.Tech Information Technology</p>
+                        <p class="text-textMuted text-xs mt-1">Dharmsinh Desai University (2021-2025)</p>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-white mb-1">Tech Stack</h4>
+                        <p class="text-textMuted text-sm">Next.js, React, Python, Django, Tailwind, PostgreSQL, Docker</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-12 px-6 max-w-7xl mx-auto">
+        <div class="flex items-end justify-between mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold tracking-tight">Selected<br><span class="text-textMuted">Works</span></h2>
+            <div class="hidden md:block text-right">
+                <p class="text-sm text-textMuted">A selection of projects<br>I've worked on recently.</p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="group bg-surface rounded-3xl p-8 border border-white/5 hover-card transition-all duration-300 relative overflow-hidden">
+                <div class="absolute top-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+                
+                <div class="h-48 mb-6 bg-gradient-to-br from-gray-800 to-black rounded-xl border border-white/5 flex items-center justify-center">
+                    <span class="text-2xl font-bold text-white/20">NY</span>
+                </div>
+
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-bold">Nirmaan Yaatraa</h3>
+                    <span class="text-xs font-mono text-textMuted border border-white/10 px-2 py-1 rounded">2024</span>
+                </div>
+                <p class="text-textMuted text-sm mb-6 line-clamp-2">Real Time Construction Project Monitoring System streamlining collaboration between contractors and admins.</p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="text-xs bg-white/5 px-3 py-1 rounded-full text-white/70">Django</span>
+                    <span class="text-xs bg-white/5 px-3 py-1 rounded-full text-white/70">React</span>
+                    <span class="text-xs bg-white/5 px-3 py-1 rounded-full text-white/70">PostgreSQL</span>
+                </div>
+            </div>
+
+            <div class="group bg-surface rounded-3xl p-8 border border-white/5 hover-card transition-all duration-300 relative overflow-hidden">
+                <div class="absolute top-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+                
+                <div class="h-48 mb-6 bg-gradient-to-br from-yellow-900/20 to-black rounded-xl border border-white/5 flex items-center justify-center">
+                    <span class="text-2xl font-bold text-yellow-500/50">🏆 C360</span>
+                </div>
+
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-bold">College360</h3>
+                    <span class="text-xs font-mono text-yellow-500 border border-yellow-500/20 bg-yellow-500/10 px-2 py-1 rounded">Best Innovation</span>
+                </div>
+                <p class="text-textMuted text-sm mb-6 line-clamp-2">3D Campus Tour application allowing virtual exploration of the DDIT campus.</p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="text-xs bg-white/5 px-3 py-1 rounded-full text-white/70">Three.js</span>
+                    <span class="text-xs bg-white/5 px-3 py-1 rounded-full text-white/70">Panolens</span>
+                </div>
+            </div>
+
+             <div class="group bg-surface rounded-3xl p-8 border border-white/5 hover-card transition-all duration-300 relative overflow-hidden">
+                <div class="absolute top-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+                
+                <div class="h-48 mb-6 bg-gradient-to-br from-purple-900/20 to-black rounded-xl border border-white/5 flex items-center justify-center">
+                    <span class="text-2xl font-bold text-purple-500/50">EM</span>
+                </div>
+
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-bold">Elite Mode</h3>
+                    <span class="text-xs font-mono text-textMuted border border-white/10 px-2 py-1 rounded">In Progress</span>
+                </div>
+                <p class="text-textMuted text-sm mb-6 line-clamp-2">One-stop destination for high-quality clothing products and trendy apparel.</p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="text-xs bg-white/5 px-3 py-1 rounded-full text-white/70">Next.js</span>
+                    <span class="text-xs bg-white/5 px-3 py-1 rounded-full text-white/70">Prisma</span>
+                </div>
+            </div>
+
+            <div class="group bg-surface rounded-3xl p-8 border border-white/5 hover-card transition-all duration-300 relative overflow-hidden">
+                 <div class="absolute top-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+
+                <div class="h-48 mb-6 bg-gradient-to-br from-green-900/20 to-black rounded-xl border border-white/5 flex items-center justify-center">
+                    <span class="text-2xl font-bold text-green-500/50">SB</span>
+                </div>
+
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-bold">Sure Bank</h3>
+                </div>
+                <p class="text-textMuted text-sm mb-6 line-clamp-2">A fictional banking website offering financial services including savings accounts.</p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="text-xs bg-white/5 px-3 py-1 rounded-full text-white/70">Next.js</span>
+                    <span class="text-xs bg-white/5 px-3 py-1 rounded-full text-white/70">Tailwind</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 px-6 max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold mb-12 flex items-center gap-3">
+            <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+            Industrial Experience
+        </h2>
+        
+        <div class="space-y-12 relative border-l border-white/10 ml-3 md:ml-0 md:pl-0">
+            <div class="md:grid md:grid-cols-[150px_1fr] gap-8 relative pl-8 md:pl-0">
+                <span class="hidden md:block absolute left-[150px] -ml-[5px] top-2 w-2.5 h-2.5 bg-blue-500 rounded-full ring-4 ring-[#0e0e0e]"></span>
+                <div class="text-sm text-textMuted font-mono mb-2 md:mb-0 text-left md:text-right md:pr-8">May '24 - Jun '24</div>
+                <div>
+                    <h3 class="text-xl font-bold text-white">Frontend Developer Intern</h3>
+                    <p class="text-blue-400 text-sm mb-4">eResto • Restrosoft Solutions Pvt. Ltd.</p>
+                    <p class="text-textMuted text-sm leading-relaxed">
+                        Transformed complex Figma designs into high-quality, responsive web pages. Focused on interactive components with ReactJS and extensive testing.
+                    </p>
+                </div>
+            </div>
+
+            <div class="md:grid md:grid-cols-[150px_1fr] gap-8 relative pl-8 md:pl-0">
+                <span class="hidden md:block absolute left-[150px] -ml-[5px] top-2 w-2.5 h-2.5 bg-blue-500 rounded-full ring-4 ring-[#0e0e0e]"></span>
+                <div class="text-sm text-textMuted font-mono mb-2 md:mb-0 text-left md:text-right md:pr-8">Apr '23 - Jul '23</div>
+                <div>
+                    <h3 class="text-xl font-bold text-white">Full Stack Developer Intern</h3>
+                    <p class="text-blue-400 text-sm mb-4">Trakky Services Pvt. Ltd.</p>
+                    <p class="text-textMuted text-sm leading-relaxed">
+                        Led a team launching four key features increasing engagement by 40%. Reduced system downtime by 25% via database migration and mentored junior interns.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto bg-gradient-to-b from-surface to-background p-10 rounded-3xl border border-white/5 text-center relative overflow-hidden">
+             <div class="absolute top-0 left-0 text-white/5 text-9xl font-serif leading-none ml-4 mt-4">“</div>
+             
+             <p class="relative z-10 text-lg md:text-xl text-textMuted italic leading-relaxed mb-8">
+                "Sahil is an exceptional frontend developer with a strong ability to solve complex bugs efficiently. His eagerness to learn new technologies, combined with a continuous learning mindset, sets him apart."
+             </p>
+             
+             <div class="flex items-center justify-center gap-4">
+                 <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black font-bold text-lg">K</div>
+                 <div class="text-left">
+                     <p class="text-white font-bold text-sm">Kevin Tamakuwala</p>
+                     <p class="text-textMuted text-xs">Upcoming SDE @Outamation</p>
+                 </div>
+             </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/10 pt-16 pb-8 bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-10 mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold mb-2">Let's work together.</h2>
+                    <p class="text-textMuted">Made with ❤️ and Next.js in Ahmedabad, India.</p>
+                </div>
+                
+                <div class="flex flex-col items-start md:items-end gap-2">
+                    <div class="flex items-center gap-2 text-sm font-mono text-textMuted">
+                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                        <span id="clock">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-4 mb-12">
+                <a href="#" class="px-6 py-3 bg-surface border border-white/5 rounded-full hover:bg-white hover:text-black transition duration-300 font-bold text-sm">LinkedIn ↗</a>
+                <a href="#" class="px-6 py-3 bg-surface border border-white/5 rounded-full hover:bg-white hover:text-black transition duration-300 font-bold text-sm">GitHub ↗</a>
+                <a href="#" class="px-6 py-3 bg-surface border border-white/5 rounded-full hover:bg-white hover:text-black transition duration-300 font-bold text-sm">Twitter ↗</a>
+                <a href="#" class="px-6 py-3 bg-surface border border-white/5 rounded-full hover:bg-white hover:text-black transition duration-300 font-bold text-sm">Instagram ↗</a>
+            </div>
+
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-textMuted uppercase tracking-wider">
+                <p>© 2025 Sahil Sapariya. All Rights Reserved.</p>
+                <p>Designed & Built by Sahil</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Update Clock
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+            document.getElementById('clock').textContent = `Local time — ${timeString}`;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
